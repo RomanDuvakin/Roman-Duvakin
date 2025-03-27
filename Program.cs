@@ -1,19 +1,19 @@
-﻿
-using System;
-using System.IO;
-using System.Linq;
+﻿using System;
+
 class Program
 {
     static void Main()
     {
-        Console.Write("Sisesta tekst, mida soovid salvestada: "); string tekst = Console.ReadLine();
-        Console.Write("Sisesta faili tee (nt C:\\temp\\fail.txt): "); string failiTee = Console.ReadLine();
-        try
+        Console.Write("Sisesta ridade arv: ");
+        int ridadeArv = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i <= ridadeArv; i++)
         {
-            string? kaustaTee = Path.GetDirectoryName(failiTee); // Leiame kausta tee
-            // Kontrollime LINQ abil, kas kataloog eksisteerib            if (!Directory.EnumerateDirectories("C:\\").Any(d => d == kaustaTee) && kaustaTee != null)            {                throw new DirectoryNotFoundException("Kausta ei leitud!");            }
-            File.WriteAllText(failiTee, tekst); Console.WriteLine("Fail salvestati edukalt: " + failiTee);
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write(j);
+            }
+            Console.WriteLine();
         }
-        catch (Exception ex) { Console.WriteLine("Viga faili salvestamisel: " + ex.Message); }
     }
 }
