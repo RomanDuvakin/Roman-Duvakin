@@ -4,16 +4,20 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Sisesta ridade arv: ");
-        int ridadeArv = int.Parse(Console.ReadLine());
+        Console.Write("Sisesta arv: ");
+        int arv = int.Parse(Console.ReadLine());
 
-        for (int i = 1; i <= ridadeArv; i++)
+        if (arv > 0)
         {
-            for (int j = 1; j <= i; j++)
-            {
-                Console.Write(j);
-            }
-            Console.WriteLine();
+            Console.WriteLine("Arv on positiivne.");
+        }
+        else if (arv < 0)
+        {
+            Console.WriteLine("Arv on negatiivne.");
+        }
+        else
+        {
+            Console.WriteLine("Arv on null.");
         }
     }
 }
